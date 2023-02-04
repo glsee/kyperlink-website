@@ -283,11 +283,11 @@ p:has(span.logotype) {
 }
 
 #services {
-  @include background_cover(url(../img/photos/fabian-irsara-67l-QujB14w-unsplash.jpg));
+  @include background_cover(url(../../dist/img/photos/fabian-irsara-67l-QujB14w-unsplash.jpg));
 }
 
 #values, #approach, #technology {
-  @include background_cover(url(../img/photos/john-schnobrich-2FPjlAyMQTA-unsplash.jpg));
+  @include background_cover(url(../../dist/img/photos/john-schnobrich-2FPjlAyMQTA-unsplash.jpg));
 
   &::before {
     background-attachment: fixed;
@@ -295,7 +295,7 @@ p:has(span.logotype) {
 }
 
 #contact {
-  @include background_cover(url(../img/photos/michal-biernat-h0xEUQXzU38-unsplash.jpg));
+  @include background_cover(url(../../dist/img/photos/michal-biernat-h0xEUQXzU38-unsplash.jpg));
 
   &::before {
     background-position: 50% 40%;
