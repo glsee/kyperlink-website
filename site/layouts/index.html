@@ -1,13 +1,15 @@
 {{ define "main" }}
 
-{{ partial "jumbotron" (dict "imageUrl" .Params.image "title" .Title "subtitle" .Params.subtitle) }}
+{{ partial "jumbotron" (dict "imageUrl" .Params.image "title" .Title "subtitle" .Params.subtitle "cta_label" .Params.cta_label) }}
 
-{{ partial "short-text" .Params.blurb}}
+{{ partial "services" .Params.services}}
 
-{{ partial "2-up" .Params }}
+{{ partial "values" .Params.values}}
 
-{{ partial "text-and-image" (dict "heading" .Params.values.heading "text" .Params.values.text "buttonText" "Read more" "buttonLink" "/values") }}
+{{ partial "approach" .Params.approach}}
 
-{{ partial "blog" . }}
+{{ partial "technology" .Params.technology}}
+
+{{ partial "contact-form" .Params.contact}}
 
 {{ end }}

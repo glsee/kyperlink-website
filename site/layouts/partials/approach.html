@@ -1,0 +1,17 @@
+<section id="approach" class="bg-black grey-3 pv4">
+    <div class="mw8 ph3 center ph4 ph2-m">
+        <h2 class="ttu primary tc">{{.above_title}}</h2>
+        <p class="f2 b lh-title mb4 grey-2 mw-none tc">{{.heading}}</p>
+        <ol class="mh2 mb3">
+        {{ range .content }}
+            <li class="ph3-ns pt3 pb4 mv5 w-80-l" data-sideheader="{{.heading | markdownify}}">
+                <svg class="db" width="6rem" height="6rem" style="color:var(--grey-4);opacity:.5">
+                    <use xlink:href="{{.svg}}"></use>
+                </svg>
+                <h3 class="f2 lh-title white fw2">{{.heading | markdownify}}</h3>
+                <p class="f5 mt3">{{.text | markdownify}}</p>
+            </li>
+        {{ end }}
+        </ol>
+    <div>
+</section>

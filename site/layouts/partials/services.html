@@ -1,0 +1,17 @@
+<section id="services" class="bg-near-black grey-3 pv5">
+	<div class="mw8 ph3 center tc">
+        <h2 class="ttu primary">{{.above_title}}</h2>
+        <p class="f2 b lh-title mb4 grey-2 mw-none">{{.heading}}</p>
+		<div class="grid-m mhn2-ns mb3">
+        {{ range .content }}
+            <div class="ph4 ph0-m w-100-m mb5 mb4-m">
+                <svg class="ma2 mb1 db w-30 center" style="color:var(--highlight); max-height:4rem;">
+                    <use xlink:href="{{.svg}}"></use>
+                </svg>
+                <h3 class="f3 lh-title grey-2 mt3 fw2 white">{{.heading}}</h3>
+                <p class="f5 mt2 measure center">{{.text | markdownify}}</p>
+            </div>
+        {{ end }}
+        </div>
+    <div>
+</section>

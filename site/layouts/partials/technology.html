@@ -1,0 +1,16 @@
+<section id="technology" class="bg-black grey-3 pt4 pb6">
+    <div class="mw8 ph2 ph3-m ph4-l center">
+        <h2 class="sr-only">{{.heading}}</h2>
+        <p class="f4 mb5 lh-copy measure-wide i georgia tracked center tc">{{.text}}</p>
+        <ul class="list mh2 mb3 flex flex-wrap">
+        {{ range .content }}
+            <li class="ph3-ns pt3 pb4 mv5">
+                <p class="sr-only">{{.text}}</p>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {{.width}} {{.height}}" preserveAspectRatio="midXmidYMeet" version="1.1" aria-label="{{.alt}}" class="db o-30" style="color:white;">
+                    <use xlink:href="{{.svg}}"></use>
+                </svg>
+            </li>
+        {{ end }}
+        </ul>
+    <div>
+</section>

@@ -1,0 +1,19 @@
+<section id="values" class="bg-black grey-3 pv5">
+    <div class="mw8 center v-top ph4 ph0-m">
+        <h2 class="f2 b lh-title mb4 grey-2 dib-ns ml4-ns v-top">{{.heading}}</h2>
+        <p class="f4 fr-ns dib-ns w-50-ns mr2 pr2-ns pb3">At <span class="logotype">Kyperlink</span>, we believe in the power of these values in guiding us to deliver top-quality work and building long-term relationship with our clients.</p>
+		<ul class="list mh2 mv5 cb tc">
+        {{ range .content }}
+            <li class="mb5 inline-flex flex-wrap content-start items-center justify-stretch tl">
+                
+                    <svg class="ml1 mr3 db" width="3.5rem" height="3.5rem" style="color:var(--grey-1);">
+                        <use xlink:href="{{.svg}}"></use>
+                    </svg>
+                
+                <h3 class="f4 ma1 ttu primary db">{{.heading | markdownify}}</h3>
+                <p class="f5 ma1 mt3 db">{{.text}}</p>
+            </li>
+        {{ end }}
+        </ul>
+    </div>
+</section>

@@ -1,33 +1,48 @@
 <!-- Contact -->
-<div class="mb4">
-  <h4 class="f3 b lh-title mb3 tc">Drop us a line below</h4>
-
-  <form action="">
-    <div class="flex-l mhn1-l">
-      <!-- Name -->
-      <div class="ph1-l w-50-l">
-        <fieldset>
-          <input type="text" id="name" name="name" placeholder="Name" class="w-100 mb2">
-          <label for="name">Name</label>
-        </fieldset>
-      </div>
-      <!-- Email -->
-      <div class="ph1-l w-50-l">
-        <fieldset>
-          <input type="email" id="email" name="email" placeholder="Email" class="w-100 mb2">
-          <label for="email">Email</label>
-        </fieldset>
-      </div>
+<section id="contact" class="bg-near-black grey-3 pv6">
+	<div class="mw8 ph3 flex-m justify-between items-center center">
+    <div class=" dn db-l center tc pl0 pr4 mh0">
+      <img src="/img/photos/michal-biernat-h0xEUQXzU38-unsplash.jpg" alt="A photo of hands holding and using a mobile phone">
     </div>
+    <div class="center ph4 p0-m mh0">
+      <h3 class="ttu primary">{{.above_title}}</h3>
+      <p class="f2 b lh-title mb4 grey-2 mw-none">{{.heading}}</p>
 
-    <!-- Message -->
-    <fieldset>
-      <textarea id="message" name="message" placeholder="Your message" rows="8" cols="80" class="w-100"></textarea>
-      <label for="message">Your message</label>
-    </fieldset>
-    <!-- Button -->
-    <div class="tc">
-      <button type="submit" class="btn w-100 w-auto-ns raise">Submit</button>
+      <form name="contact" netlify>
+        <div class="">
+          <!-- Name -->
+          <div class="mv2">
+            <fieldset>
+              <input type="text" id="name" name="name" placeholder="Name" class="w-100 mb2" required>
+              <label for="name">Name</label>
+            </fieldset>
+          </div>
+          <!-- Company -->
+          <div class="mv2">
+            <fieldset>
+              <input type="text" id="company" name="company" placeholder="Company" class="w-100 mb2" required>
+              <label for="company">Company</label>
+            </fieldset>
+          </div>
+          <!-- Email -->
+          <div class="mv2">
+            <fieldset>
+              <input type="email" id="email" name="email" placeholder="Email" class="w-100 mb2" required>
+              <label for="email">Email</label>
+            </fieldset>
+          </div>
+        </div>
+
+        <!-- Message -->
+        <fieldset class="mt2 mb3">
+          <textarea id="message" name="message" placeholder="Message" rows="8" cols="80" class="w-100 mb3" required></textarea>
+          <label for="message">Message</label>
+        </fieldset>
+        <!-- Button -->
+        <div class="tc">
+          <button type="submit" class="btn w-100 bg-primary white">Send</button>
+        </div>
+      </form>
     </div>
-  </form>
-</div>
+  </div>
+</section>

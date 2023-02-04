@@ -1,5 +1,22 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  font-family: "Maven Pro", -apple-system, BlinkMacSystemFont, "avenir next", avenir, helvetica, "helvetica neue", ubuntu, roboto, noto, "segoe ui", arial, sans-serif;
+}
+
 ::selection {
   background-color: var(--highlight);
+  color: var(--black);
 }
 
 /* Used in the navbar */
@@ -11,5 +28,559 @@
   }
   & ul a:hover, & ul a:focus {
     box-shadow: inset 0 -4px 0 var(--primary);
+  }
+
+}
+
+/* Used in the navbar and footer */
+body > nav, body > footer {
+  & a {
+    transition: var(--hover-transition);
+  }
+  & ul a.br-pill:hover, & ul a.br-pill:focus {
+    box-shadow: none;
+    color: var(--black);
+  }
+  & ul a.br-pill.highlight:hover, & ul a.br-pill.highlight:focus {
+    background-color: var(--highlight);
+    border-color: var(--highlight);
+  }
+}
+
+/* all occurrences of Kyperlink logotype */
+span.logotype {
+  display: inline-block;
+  position: relative;
+  color: transparent;
+  font-family: 'Maven Pro';
+  font-weight: 500;
+  letter-spacing: calc(-1 * (.05em * 10 / 9) );
+  z-index: 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 10%;
+    left: 1.7%;
+    width: 99%;
+    height: 67%;
+    background: center / contain no-repeat url("data:image/svg+xml;utf8,%3Csvg width='2775' height='662' viewBox='0 0 2775 662' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M74.7935 364.992L58.0914 293.922L275.219 32.1243H376.884L74.7935 364.992ZM-0.00292969 515.833V32.1243H80.6029V515.833H-0.00292969ZM166.292 231.555L392.133 515.833H287.564L104.567 283.769L166.292 231.555Z' fill='white'/%3E%3Cpath d='M445.598 656.522C436.4 656.522 427.686 655.555 419.456 653.621C411.226 652.171 403.964 650.237 397.671 647.82V582.552C403.48 584.486 409.289 586.178 415.099 587.628C420.908 589.079 427.202 589.804 433.979 589.804C448.503 589.804 460.606 585.936 470.288 578.201C479.971 570.465 488.201 559.345 494.978 544.841C501.756 530.337 507.324 512.932 511.681 492.627L513.133 530.337L357.731 151.782H444.146L549.442 438.962H538.549L642.393 151.782H721.546L571.227 538.315C559.124 569.256 546.053 593.188 532.014 610.109C517.974 627.514 503.451 639.601 488.443 646.369C473.919 653.138 459.638 656.522 445.598 656.522Z' fill='white'/%3E%3Cpath d='M928.127 525.986C918.929 525.986 907.552 524.777 893.997 522.36C880.441 520.426 866.886 517.284 853.331 512.932C839.775 508.098 827.914 501.813 817.748 494.077L837.355 469.42V661.599H761.832V222.127C761.832 207.139 766.431 194.569 775.629 184.417C785.312 174.264 797.899 166.286 813.391 160.485C828.883 154.2 845.827 149.849 864.223 147.431C883.104 144.53 901.742 143.08 920.139 143.08C952.575 143.08 982.106 149.123 1008.73 161.21C1035.36 173.297 1056.66 193.844 1072.64 222.852C1088.61 251.377 1096.6 290.538 1096.6 340.335C1096.6 378.045 1090.06 410.921 1076.99 438.962C1063.92 466.52 1044.8 488.034 1019.63 503.505C994.451 518.492 963.952 525.986 928.127 525.986ZM914.33 462.168C937.567 462.168 956.932 457.334 972.424 447.664C987.916 437.995 999.535 423.975 1007.28 405.603C1015.03 387.231 1018.9 364.992 1018.9 338.884C1018.9 314.711 1015.99 292.713 1010.19 272.891C1004.86 253.069 994.935 237.598 980.412 226.478C965.888 214.875 945.071 209.073 917.96 209.073C893.755 209.073 874.148 211.732 859.14 217.051C844.616 221.885 837.355 229.137 837.355 238.807V441.138C849.942 447.906 862.771 453.224 875.842 457.092C888.913 460.476 901.742 462.168 914.33 462.168Z' fill='white'/%3E%3Cpath d='M1305.04 526.711C1269.21 526.711 1237.99 519.459 1211.36 504.955C1185.22 490.451 1164.88 468.937 1150.36 440.412C1136.32 411.888 1129.3 377.078 1129.3 335.983C1129.3 272.649 1144.07 224.786 1173.6 192.394C1203.61 159.518 1245.25 143.08 1298.5 143.08C1337.71 143.08 1369.42 151.782 1393.63 169.187C1417.84 186.592 1435.26 211.007 1445.91 242.433C1457.05 273.374 1462.37 309.635 1461.89 351.213H1175.05L1172.87 294.647H1403.8L1385.64 312.777C1384.19 275.55 1376.44 248.476 1362.4 231.555C1348.36 214.15 1326.34 205.447 1296.32 205.447C1276.96 205.447 1260.5 209.557 1246.94 217.776C1233.39 225.511 1222.98 239.048 1215.72 258.387C1208.94 277.242 1205.55 303.349 1205.55 336.709C1205.55 377.32 1214.99 408.262 1233.87 429.534C1252.75 450.323 1280.59 460.718 1317.38 460.718C1333.84 460.718 1349.09 459.268 1363.13 456.367C1377.65 453.466 1390.97 449.84 1403.07 445.489C1415.17 440.654 1425.58 436.061 1434.3 431.71V502.054C1417.35 509.306 1398.23 515.108 1376.93 519.459C1355.63 524.294 1331.66 526.711 1305.04 526.711Z' fill='white'/%3E%3Cpath d='M1513.26 515.833V185.142C1519.55 181.274 1531.17 175.956 1548.11 169.187C1565.06 162.419 1585.15 156.617 1608.39 151.782C1631.62 146.464 1655.1 143.805 1678.83 143.805C1690.93 143.805 1700.85 144.772 1708.6 146.706C1716.34 148.64 1722.88 150.816 1728.21 153.233V214.15C1717.07 212.699 1705.45 211.732 1693.35 211.249C1681.25 210.282 1669.14 210.282 1657.04 211.249C1644.94 211.732 1633.08 212.699 1621.46 214.15C1609.84 215.6 1599.19 217.051 1589.51 218.501V515.833H1513.26Z' fill='white'/%3E%3Cpath d='M1842.52 515.833H1766.99V13.9943H1842.52V515.833Z' fill='white'/%3E%3Cpath d='M1915.83 515.833V153.958H1992.07L1992.8 515.833H1915.83ZM1913.65 93.7664V24.8723H1994.98V93.7664H1913.65Z' fill='white'/%3E%3Cpath d='M2065.97 181.516C2076.63 176.198 2088.49 171.363 2101.56 167.012C2115.11 162.177 2129.39 158.068 2144.4 154.683C2159.41 151.299 2174.66 148.64 2190.15 146.706C2205.64 144.772 2220.65 143.805 2235.17 143.805C2269.55 143.805 2297.63 148.64 2319.41 158.309C2341.2 167.495 2357.41 181.999 2368.06 201.821C2378.72 221.16 2384.04 245.575 2384.04 275.067V515.833H2307.79V285.219C2307.79 276.034 2306.58 267.089 2304.16 258.387C2302.22 249.201 2298.11 240.982 2291.82 233.73C2286.01 225.995 2277.29 219.951 2265.67 215.6C2254.54 211.249 2239.77 209.073 2221.38 209.073C2208.31 209.073 2194.75 210.282 2180.71 212.699C2167.16 215.117 2154.33 218.501 2142.22 222.852V515.833H2065.97V181.516Z' fill='white'/%3E%3Cpath d='M2514.71 304.8L2663.57 151.782H2757.25L2547.39 351.213L2514.71 304.8ZM2530.68 515.833H2455.16V13.9943H2531.41L2530.68 515.833ZM2564.81 280.143L2775.41 515.833H2677.37L2511.08 330.907L2564.81 280.143Z' fill='white'/%3E%3Cellipse cx='1954.44' cy='59.3251' rx='59.5693' ry='59.4891' fill='%2300FF77'/%3E%3C/svg%3E") transparent;
+    pointer-events: none;
+    z-index: -1;
+  }
+}
+
+
+/* all occurrences of above-heading subtitle */
+@mixin montserrat {
+  font-family: Montserrat, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;;
+  font-weight: 400;
+  font-variant-numeric: normal;
+  letter-spacing: 2px;
+}
+
+h2.primary, h3 {
+  @include montserrat;
+
+  &.f1, &.f2, &.f3 {
+    letter-spacing: -1.5px !important;
+  }
+}
+
+/* Gradient text in jumbotron */
+#top {
+  background-color: var(--black);
+
+  h1, h1 span {
+    @include montserrat;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+  }
+
+  p, p span {
+    @include montserrat;
+    font-weight: 500;
+    letter-spacing: -1px;
+  }
+
+  /* collapse the additional words in the subtitle */
+  p .sr-only {
+    letter-spacing: -1em;
+  }
+
+  .flex-m > div {
+    flex: 1 0;
+  }
+  
+  .rive-container {
+    margin: calc(-1 * var(--spacing-extra-extra-large)) 0 calc(-1 * var(--spacing-extra-extra-large)) calc(-1 * var(--spacing-extra-large));
+    object-fit: contain;
+
+    canvas {
+      width: 100%;
+    }
+  }
+}
+
+.text-gradient {
+  caret-color: #000;
+  color: transparent!important;
+  -webkit-background-clip: text;
+  -webkit-box-decoration-break: clone;
+  // -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-image: linear-gradient(90deg, var(--alternate) 0%, var(--primary) 100%);
+}
+
+
+
+
+/* adjust the letter spacing where the Kyperlink logotype SVG appears for more pleasing viewing */
+p:has(span.logotype) {
+  letter-spacing: -0.05em;
+}
+
+/* footer */
+
+#footer {
+  .flex {
+    flex-flow: row wrap;
+    place-content: start space-between;
+    place-items: start stretch;
+  }
+
+  .pitch {
+    flex: 1 0 100%;
+    align-self: end;
+  }
+  
+  .social {
+    align-self: center;
+    margin-top: .5rem;
+    text-align: right;
+
+    display: none;
+  }
+
+  .logomark {
+    flex: 0 1 content;
+    object-fit: contain;
+    text-align: right;
+
+    img {
+      width: auto;
+      height: auto;
+      max-height: 5rem;
+    }
+  }
+
+  .copyright {
+    flex: 1 0 100%;
+    align-self: end;
+    margin-top: 3rem;
+
+    p {
+      font-size: .8em;
+      margin: 0;
+    }
+  }
+}
+
+
+/* Flex layout for Footer section on screen size ns and above */
+@media screen and (min-width: 40em) {
+  #footer {
+    .flex {
+      gap: 0 2rem;
+    }
+  }
+}
+/* Flex layout for Footer section on screen size m and above */
+@media screen and (min-width: 50em) {
+  #footer {
+    .pitch {
+      order: 1;
+      flex-basis: calc(50% - 1rem);
+      align-self: start;
+    }
+
+    .logomark {
+      order: 3;
+      flex: 0 0 content;
+    }
+    
+    .links {
+      order: 2;
+    }
+
+    .social {
+      order: 5;
+      flex: 0 0 auto;
+    }
+
+    .copyright {
+      order: 4;
+      flex-basis: content;
+    }
+  }
+}
+
+
+/* Flex layout for Footer section on screen size l and above */
+@media screen and (min-width: 60em) {
+  #footer {
+    .pitch {
+      order: 1;
+      flex: 3 1 calc(35% - 1rem);
+      // flex: 1 1 40%;
+    }
+
+    .logomark {
+      order: 4;
+      flex-grow: 1;
+
+      img {
+        max-height: 7rem;
+      }
+    }
+
+    .links {
+      order: 2;
+      flex-grow: 2;
+    }
+
+    .social {
+      order: 3;
+      flex-grow: 1;
+    }
+
+    .copyright {
+      order: 5;
+      flex-basis: 100%;
+    }
+  }
+}
+
+
+
+/* cover background */
+
+@mixin background_cover($cover) {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: $cover;
+    background-size: cover;
+    opacity: .05;
+    pointer-events: none;
+  }
+}
+
+#services {
+  @include background_cover(url(/dist/img/photos/fabian-irsara-67l-QujB14w-unsplash.jpg));
+}
+
+#values, #approach, #technology {
+  @include background_cover(url(/dist/img/photos/john-schnobrich-2FPjlAyMQTA-unsplash.jpg));
+
+  &::before {
+    background-attachment: fixed;
+  }
+}
+
+#contact {
+  @include background_cover(url(/dist/img/photos/michal-biernat-h0xEUQXzU38-unsplash.jpg));
+
+  &::before {
+    background-position: 50% 40%;
+    background-attachment: fixed;
+    opacity: .15;
+  }
+}
+
+
+/* Grid layout for Services section on screen size m and above */
+
+@media screen and (min-width: 50em) {
+  #services .grid-m {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 1rem 3rem;
+    place-items: start stretch;
+    place-content: start space-evenly;
+    grid-auto-flow: column;
+
+    & > div {
+      display: contents;
+    }
+
+    & > div:first-child > {
+      svg, h3, p {
+        grid-column: 1;
+      }
+    }
+
+    & > div:nth-child(2) > {
+      svg, h3, p {
+        grid-column: 2;
+      }
+    }
+
+    & > div:nth-child(3) > {
+      svg, h3, p {
+        grid-column: 3;
+      }
+    }
+
+    & > div > {
+      svg {
+        grid-row: 1;
+      }
+
+      h3 {
+        grid-row: 2;
+        align-self: center;
+      }
+
+      p {
+        grid-row: 3;
+      }
+    }
+  }
+}
+
+
+/* Values section */
+#values ul.list {
+  display: flex;
+  flex-flow: row wrap;
+
+  li.inline-flex {
+    flex: 1 100%;
+    display: inline-flex;
+    flex-direction: row-reverse;
+
+    h3, p {
+      width: calc(100% - 3.5rem - var(--spacing-medium) - 3 * var(--spacing-extra-small));
+    }
+
+    h3 {
+      order: 1;
+    }
+
+    svg {
+      order: 2;
+    }
+
+    p {
+      order: 3;
+    }
+  }
+}
+
+/* More balanced layout for Approach section on screen size ns and above */
+
+@media screen and (min-width: 40em) {
+
+  #values ul.list li.inline-flex,
+  #technology ul.list li.flex {
+    flex: 1 1 calc(50% - 2 * var(--spacing-extra-small));
+    margin: var(--spacing-large) var(--spacing-extra-small);
+  }
+
+}
+
+/* More balanced layout for Approach section on screen size m and above */
+
+@media screen and (min-width: 50em) {
+
+  #values ul.list li.inline-flex,
+  #technology ul.list li.flex {
+    flex: 1 1 calc(50% - 2 * var(--spacing-medium));
+    margin: var(--spacing-large) var(--spacing-medium);
+  }
+
+}
+
+/* More balanced layout for Approach section on screen size ; and above */
+
+@media screen and (min-width: 60em) {
+
+  #values ul.list li.inline-flex,
+  #technology ul.list li.flex {
+    flex: 1 1 calc(33% - 2 * var(--spacing-medium));
+  }
+
+}
+
+
+
+
+/* Numbering on Approach section */
+
+#approach ol {
+  counter-reset: step-counter;
+
+  li {
+    counter-increment: step-counter;
+    position: relative;
+    padding-left: 3rem;
+    margin-left: 8rem;
+  }
+
+  li::marker {
+    content: " 0" counter(step-counter);
+    @include montserrat;
+    font-size: 4.5rem;
+    color: var(--grey-3);
+  }
+
+  li::before {
+    @include montserrat;
+
+    content: "" attr(data-sideheader);
+    text-align: right;
+    text-transform: uppercase;
+    font-size: .7rem;
+    color: var(--highlight);
+    border-top: .2rem solid var(--grey-3);
+    display: block;
+    hyphens: auto;
+    padding-top:.7rem;
+    position: absolute;
+    left: -6.9rem;
+    top: 5rem;
+    width: 6.9rem;
+  }
+
+  li {
+    svg {
+      position: absolute;
+      left: -6rem;
+      top: 11rem;
+    }
+
+    h3, p {
+      margin-left: 3rem;
+    }
+
+    h3 {
+      transform: translateY(-.4rem);
+    }
+
+    p {
+      line-height: 2rem;
+      vertical-align: middle;
+    }
+
+    p strong {
+      color: var(--grey-1);
+      font-weight: normal;
+      font-size: 1.1em;
+    }
+
+    p em strong {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 1.25em;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: -.5rem;
+      left: 3rem;
+      width: 100%;
+      height: calc(100% + .5rem);
+      border-left: .1rem solid var(--grey-4);
+      pointer-events: none;
+    }
+  }
+}
+
+
+/* More balanced layout for Approach section on screen size m and above */
+
+@media screen and (min-width: 50em) {
+  #approach ol li {
+    margin-left: 10rem;
+  }
+}
+
+/* More balanced layout for Approach section on screen size l and above */
+
+@media screen and (min-width: 60em) {
+  #approach ol li {
+    margin-left: 12rem;
+  }
+}
+
+/* screen reader only. Heading hidden from visual browsers */
+.sr-only {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+}
+
+/* Technology partner logos listing */
+
+#technology ul {
+  flex-flow: row wrap;
+  flex-basis: content;
+  place-content: start center;
+  place-items: stretch stretch;
+  gap: var(--spacing-extra-large) var(--spacing-large);
+
+  li {
+    flex: content;
+    flex: 1 1 calc(50% - var(--spacing-large));
+    margin: 0;
+    max-height: 2.6rem;
+    padding: 0;
+    object-fit: contain;
+
+    svg {
+      margin: auto;
+      height: 100% !important;
+    }
+  }
+}
+
+
+/* More balanced layout for Technology section on screen size m and above */
+
+@media screen and (min-width: 50em) {
+  #technology ul.list li {
+    flex: 1 1 calc(33% - 2 * var(--spacing-large));
+
+    /* make sure the last two elements don't grow to fill the whole remaining row */
+    &:nth-last-of-type(-n+2) {
+      flex-grow: 0;
+    } 
+  }
+
+}
+
+/* More balanced layout for Technology section on screen size ; and above */
+
+@media screen and (min-width: 60em) {
+  #technology ul {
+    gap: var(--spacing-extra-large) var(--spacing-extra-large);
+
+    li {
+      flex: 1 1 calc(33% - 2 * var(--spacing-extra-large));
+    }
   }
 }

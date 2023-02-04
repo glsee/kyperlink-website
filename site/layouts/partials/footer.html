@@ -1,46 +1,33 @@
-<footer class="bg-black ph3 pv4 white">
+<footer id="footer" class="bg-black ph3 pt5 pb4 grey-3">
+	<div class="mw8 center pt3 ph4-ns ph2-n">
+		<div class="flex justify-between">
 
-	<div class="mw7 center pt3">
+			<div class="pitch">
+				<p class="f6 lh-copy measure"><strong><a href="/" class="link white"><span class="logotype">Kyperlink</span></a></strong> is a digital agency delivering services in web design, app development, as well as technical advisory and consultancy with a focus on <strong class="fw1 grey-2">impactful user experience</strong>.</p>
+			</div>
 
-		<div class="measure-narrow center mb4">
-
-			<img src="/img/logo.svg" alt="Kaldi logo" class="db w4 center mb4 br0">
-			<p class="f3 lh-title light-gray b tc mb2">Newsletter subscribe</p>
-			<p>Get awesome news from us in your inbox every two weeks. Be the first to learn about new products.</p>
-
-			{{ partial "newsletter-form" . }}
-
-		</div>
-
-		<div class="flex-ns justify-between">
-
-			<div>
-				<h3 class="f4 b lh-title mb1 primary">Kaldi</h3>
-				<ul class="mb3">
-					<li><a href="/" class="link">Home</a></li>
-					<li><a href="/products" class="link">Our products</a></li>
-					<li><a href="/values" class="link">About</a></li>
-					<li><a href="/post" class="link">Blog</a></li>
-					<li><a href="/contact" class="link">Contact</a></li>
+			<div class="links">
+				<ul class="f6 white">
+					<li><a href="#services" class="link db mh3 mv1">Our services</a></li>
+					<li><a href="#values" class="link db mh3 mv1">Our values</a></li>
+					<li><a href="#approach" class="link db mh3 mv1">Our approach</a></li>
+					<li><a href="#contact" class="b br-pill ba bw1 mt3 ph3 pv1 no-underline dib highlight bg-animate">Get in touch</a></li>
 				</ul>
 			</div>
 
-			<div>
-				<h3 class="f4 b lh-title mb1 primary">Find out more</h3>
-				<ul class="mb3">
-					<li><a href="/post/jamaica-blue/" class="link">Latest offers</a></li>
-					<li><a href="/contact" class="link">Schedule and appointment</a></li>
+			<div class="social">
+				<ul class="mh2 ml3">
+					{{ partial "social-icon" (dict "link" "https://facebook.com/kyperlink" "svg" "icons-facebook") }}
+					{{ partial "social-icon" (dict "link" "https://twitter.com/kyperlink" "svg" "icons-twitter") }}
 				</ul>
 			</div>
 
-			<div>
-				<h3 class="f4 b lh-title mb2 primary">Social media</h3>
-				<ul class="mhn2">
-					{{ partial "social-icon" (dict "link" "#" "svg" "icons-facebook") }}
-					{{ partial "social-icon" (dict "link" "#" "svg" "icons-twitter") }}
-					{{ partial "social-icon" (dict "link" "#" "svg" "icons-instagram") }}
-					{{ partial "social-icon" (dict "link" "#" "svg" "icons-vimeo") }}
-				</ul>
+			<div class="logomark">
+				<img src="/img/logo-kyperlink-logomark.svg" alt="Kyperlink logo" class="br0">
+			</div>
+
+			<div class="copyright">
+				<p class="f6">&copy; 2023 Kyperlink Technologies Sdn Bhd (1490532-M)</p>
 			</div>
 
 		</div>
