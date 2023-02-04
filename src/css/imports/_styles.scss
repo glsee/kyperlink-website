@@ -188,7 +188,7 @@ p:has(span.logotype) {
 
 
 /* Flex layout for Footer section on screen size ns and above */
-@media screen and (min-width: 40em) {
+@media screen and (--breakpoint-not-small) {
   #footer {
     .flex {
       gap: 0 2rem;
@@ -196,7 +196,7 @@ p:has(span.logotype) {
   }
 }
 /* Flex layout for Footer section on screen size m and above */
-@media screen and (min-width: 50em) {
+@media screen and (--breakpoint-medium) {
   #footer {
     .pitch {
       order: 1;
@@ -227,7 +227,7 @@ p:has(span.logotype) {
 
 
 /* Flex layout for Footer section on screen size l and above */
-@media screen and (min-width: 60em) {
+@media screen and (--breakpoint-large) {
   #footer {
     .pitch {
       order: 1;
@@ -265,17 +265,16 @@ p:has(span.logotype) {
 
 /* cover background */
 
-@mixin background_cover($cover) {
+@mixin background_cover {
   position: relative;
 
-  &::before {
+  & > .cover-bg {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    background-image: $cover;
     background-size: cover;
     opacity: .05;
     pointer-events: none;
@@ -283,21 +282,21 @@ p:has(span.logotype) {
 }
 
 #services {
-  @include background_cover(url(../../dist/img/photos/fabian-irsara-67l-QujB14w-unsplash.jpg));
+  @include background_cover;
 }
 
 #values, #approach, #technology {
-  @include background_cover(url(../../dist/img/photos/john-schnobrich-2FPjlAyMQTA-unsplash.jpg));
+  @include background_cover;
 
-  &::before {
+  & > .cover-bg {
     background-attachment: fixed;
   }
 }
 
 #contact {
-  @include background_cover(url(../../dist/img/photos/michal-biernat-h0xEUQXzU38-unsplash.jpg));
+  @include background_cover;
 
-  &::before {
+  & > .cover-bg {
     background-position: 50% 40%;
     background-attachment: fixed;
     opacity: .15;
@@ -307,7 +306,7 @@ p:has(span.logotype) {
 
 /* Grid layout for Services section on screen size m and above */
 
-@media screen and (min-width: 50em) {
+@media screen and (--breakpoint-medium) {
   #services .grid-m {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -387,7 +386,7 @@ p:has(span.logotype) {
 
 /* More balanced layout for Approach section on screen size ns and above */
 
-@media screen and (min-width: 40em) {
+@media screen and (--breakpoint-not-small) {
 
   #values ul.list li.inline-flex,
   #technology ul.list li.flex {
@@ -399,7 +398,7 @@ p:has(span.logotype) {
 
 /* More balanced layout for Approach section on screen size m and above */
 
-@media screen and (min-width: 50em) {
+@media screen and (--breakpoint-medium) {
 
   #values ul.list li.inline-flex,
   #technology ul.list li.flex {
@@ -411,7 +410,7 @@ p:has(span.logotype) {
 
 /* More balanced layout for Approach section on screen size ; and above */
 
-@media screen and (min-width: 60em) {
+@media screen and (--breakpoint-large) {
 
   #values ul.list li.inline-flex,
   #technology ul.list li.flex {
@@ -509,7 +508,7 @@ p:has(span.logotype) {
 
 /* More balanced layout for Approach section on screen size m and above */
 
-@media screen and (min-width: 50em) {
+@media screen and (--breakpoint-medium) {
   #approach ol li {
     margin-left: 10rem;
   }
@@ -517,7 +516,7 @@ p:has(span.logotype) {
 
 /* More balanced layout for Approach section on screen size l and above */
 
-@media screen and (min-width: 60em) {
+@media screen and (--breakpoint-large) {
   #approach ol li {
     margin-left: 12rem;
   }
@@ -561,7 +560,7 @@ p:has(span.logotype) {
 
 /* More balanced layout for Technology section on screen size m and above */
 
-@media screen and (min-width: 50em) {
+@media screen and (--breakpoint-not-small) {
   #technology ul.list li {
     flex: 1 1 calc(33% - 2 * var(--spacing-large));
 
@@ -575,7 +574,7 @@ p:has(span.logotype) {
 
 /* More balanced layout for Technology section on screen size ; and above */
 
-@media screen and (min-width: 60em) {
+@media screen and (--breakpoint-large) {
   #technology ul {
     gap: var(--spacing-extra-large) var(--spacing-extra-large);
 
