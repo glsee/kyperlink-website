@@ -473,6 +473,7 @@ p:has(span.logotype) {
 
 @media screen and (--breakpoint-not-small) {
   #approach ol {
+    list-style-position: outside;
 
     li {
       position: relative;
