@@ -447,6 +447,7 @@ p:has(span.logotype) {
     svg {
       float: right;
       height: 4.5rem;
+      width: 4.5rem;
       margin-top:1.5rem;
       text-align: right;
     }
@@ -505,8 +506,8 @@ p:has(span.logotype) {
 
       svg {
         position: absolute;
-        left: -6rem;
-        top: 11rem;
+        left: -4.5rem;
+        top: 10rem;
       }
 
       h3, p {
