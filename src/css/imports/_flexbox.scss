@@ -1,8 +1,6 @@
 .flex { display: flex; }
 .inline-flex { display: inline-flex; }
 
-/* 1. Fix for Chrome 44 bug.
- * https://code.google.com/p/chromium/issues/detail?id=506893 */
 .flex-auto {
   flex: 1 1 auto;
   min-width: 0; /* 1 */
@@ -51,7 +49,7 @@
 .order-8 { order: 8; }
 .order-last { order: 99999; }
 
-@media (--breakpoint-not-small) {
+@media screen and (--breakpoint-not-small) {
   .flex-ns { display: flex; }
   .inline-flex-ns { display: inline-flex; }
   .flex-auto-ns {
@@ -99,7 +97,7 @@
   .order-8-ns { order: 8; }
   .order-last-ns { order: 99999; }
 }
-@media (--breakpoint-medium) {
+@media screen and (--breakpoint-medium) {
   .flex-m { display: flex; }
   .inline-flex-m { display: inline-flex; }
   .flex-auto-m {
@@ -148,7 +146,7 @@
   .order-last-m { order: 99999; }
 }
 
-@media (--breakpoint-large) {
+@media screen and (--breakpoint-large) {
   .flex-l { display: flex; }
   .inline-flex-l { display: inline-flex; }
   .flex-auto-l {
