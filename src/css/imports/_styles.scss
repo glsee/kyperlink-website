@@ -113,12 +113,18 @@ h2.primary, h3 {
   }
   
   .rive-container {
-    margin: calc(-1 * var(--spacing-extra-extra-large)) 0 calc(-1 * var(--spacing-extra-extra-large)) calc(-1 * var(--spacing-extra-large));
     object-fit: contain;
 
     canvas {
       width: 100%;
     }
+  }
+}
+
+
+@media screen and (--breakpoint-medium) {
+  .rive-container {
+    margin: calc(-1 * var(--spacing-extra-extra-large)) 0 calc(-1 * var(--spacing-extra-extra-large)) calc(-1 * var(--spacing-extra-large));
   }
 }
 
@@ -423,88 +429,111 @@ p:has(span.logotype) {
 
 
 /* Numbering on Approach section */
-
 #approach ol {
   counter-reset: step-counter;
-
+  list-style-position: inside;
+  
   li {
     counter-increment: step-counter;
-    position: relative;
-    padding-left: 3rem;
-    margin-left: 8rem;
-  }
 
-  li::marker {
-    content: " 0" counter(step-counter);
-    @include montserrat;
-    font-size: 4.5rem;
-    color: var(--grey-3);
-  }
+    &::marker {
+      content: "0" counter(step-counter);
+      @include montserrat;
+      font-size: 4.5rem;
+      color: var(--grey-3);
+      display: inline-block;
+    }
 
-  li::before {
-    @include montserrat;
-
-    content: "" attr(data-sideheader);
-    text-align: right;
-    text-transform: uppercase;
-    font-size: .7rem;
-    color: var(--highlight);
-    border-top: .2rem solid var(--grey-3);
-    display: block;
-    hyphens: auto;
-    padding-top:.7rem;
-    position: absolute;
-    left: -6.9rem;
-    top: 5rem;
-    width: 6.9rem;
-  }
-
-  li {
     svg {
-      position: absolute;
-      left: -6rem;
-      top: 11rem;
+      float: right;
+      height: 4.5rem;
+      margin-top:1.5rem;
+      text-align: right;
     }
-
-    h3, p {
-      margin-left: 3rem;
-    }
-
-    h3 {
-      transform: translateY(-.4rem);
-    }
-
+    
     p {
       line-height: 2rem;
-      vertical-align: middle;
+
+      strong {
+        color: var(--grey-1);
+        font-weight: normal;
+        font-size: 1.1em;
+      }
+
+      em strong {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 1.25em;
+      }
     }
 
-    p strong {
-      color: var(--grey-1);
-      font-weight: normal;
-      font-size: 1.1em;
-    }
+  }
 
-    p em strong {
-      font-style: normal;
-      font-weight: bold;
-      font-size: 1.25em;
-    }
+}
 
-    &::after {
-      content: "";
-      display: block;
-      position: absolute;
-      top: -.5rem;
-      left: 3rem;
-      width: 100%;
-      height: calc(100% + .5rem);
-      border-left: .1rem solid var(--grey-4);
-      pointer-events: none;
+@media screen and (--breakpoint-not-small) {
+  #approach ol {
+
+    li {
+      position: relative;
+      padding-left: 3rem;
+      margin-left: 8rem;
+
+      &::marker {
+        content: " 0" counter(step-counter);
+        display: block;
+      }
+
+      &::before {
+        @include montserrat;
+  
+        content: "" attr(data-sideheader);
+        text-align: right;
+        text-transform: uppercase;
+        font-size: .7rem;
+        color: var(--highlight);
+        border-top: .2rem solid var(--grey-3);
+        display: block;
+        hyphens: auto;
+        padding-top:.7rem;
+        position: absolute;
+        left: -6.9rem;
+        top: 5rem;
+        width: 6.9rem;
+      }
+
+      svg {
+        position: absolute;
+        left: -6rem;
+        top: 11rem;
+      }
+
+      h3, p {
+        margin-left: 3rem;
+      }
+
+      h3 {
+        transform: translateY(-.4rem);
+      }
+
+      p {
+        vertical-align: middle;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: -.5rem;
+        left: 3rem;
+        width: 100%;
+        height: calc(100% + .5rem);
+        border-left: .1rem solid var(--grey-4);
+        pointer-events: none;
+      }
     }
   }
 }
-
 
 /* More balanced layout for Approach section on screen size m and above */
 
