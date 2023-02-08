@@ -1,6 +1,6 @@
 ---
 title: "Technology solutions with impactful user experience"
-subtitle: We craft web and mobile apps, custom-tailored for your needs in digital marketing, business process improvements and unique user experience.
+subtitle: "We craft web and mobile apps, custom-tailored for your needs in digital marketing, business process improvements and unique user experience."
 cta_label: "Get in touch"
 services:
     above_title: "Our services"
